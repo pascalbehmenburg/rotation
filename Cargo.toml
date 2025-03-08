@@ -1,5 +1,5 @@
 [package]
-name = "bva-rotation"
+name = "rotation"
 version = "0.1.0"
 authors = ["pascalbehmenburg <pascalbehmenburg@posteo.net>"]
 edition = "2021"
