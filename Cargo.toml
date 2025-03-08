@@ -1,0 +1,69 @@
+[package]
+name = "bva-rotation"
+version = "0.1.0"
+authors = ["pascalbehmenburg <pascalbehmenburg@posteo.net>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.40"
+dioxus = { version = "0.6", features = ["fullstack"] }
+dioxus-web = { version = "0.6", features = ["hydrate"], optional = true }
+axum = { version = "0.7", optional = true }
+dioxus-fullstack = { version = "0.6" }
+tokio = { version = "*", features = ["full"], optional = true }
+tower-http = { version = "*", features = ["auth"], optional = true }
+async-trait = { version = "0.1.71", optional = true }
+sqlx = { version = "0.7.0", features = [
+    "macros",
+    "migrate",
+    "postgres",
+    "sqlite",
+    "_unstable-all-types",
+    "tls-native-tls",
+    "runtime-tokio",
+], optional = true }
+http = { version = "*", optional = true }
+tower = { version = "*", optional = true }
+axum_session = { version = "0.12", optional = true, features = [
+    "sqlite-rustls",
+] }
+axum_session_auth = { version = "0.12", optional = true, features = [
+    "sqlite-rustls",
+] }
+
+anyhow = "1.0.40"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", optional = true }
+execute = { version = "0.2.12", optional = true }
+
+[features]
+default = []
+web = ["dioxus/web", "dioxus-web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+
+server = [
+    "axum",
+    "tokio",
+    "dioxus-fullstack/axum",
+    "tower-http",
+    "async-trait",
+    "sqlx",
+    "axum_session",
+    "axum_session_auth",
+    "http",
+    "tower",
+]
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
