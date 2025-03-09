@@ -1,3 +1,105 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* latin-ext */
+@font-face {
+    font-family: 'Geist';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/geist/v1/gyByhwUxId8gMEwSGFWfOw.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Geist';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/geist/v1/gyByhwUxId8gMEwcGFU.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@layer base {
+    :root {
+        font-family: "Geist", "sans-serif";
+      --background: 0 0% 98%; /* neutral-50 - main background */
+      --foreground: 0 0% 10%; /* neutral-900 - main text */
+      --card: 0 0% 100%; /* white - top layer */
+      --card-foreground: 0 0% 10%;
+      --popover: 0 0% 100%; /* white - top layer */
+      --popover-foreground: 0 0% 10%;
+      --primary: 210 100% 50%; /* blue-500 - primary blue */
+      --primary-foreground: 0 0% 100%;
+      --secondary: 270 100% 50%; /* complementary to blue - purple */
+      --secondary-foreground: 0 0% 100%;
+      --muted: 0 0% 92%; /* neutral-200 - muted elements */
+      --muted-foreground: 0 0% 45%;
+      --accent: 225 100% 60%; /* blue variant */
+      --accent-foreground: 0 0% 100%;
+      --destructive: 0 84% 60%;
+      --destructive-foreground: 0 0% 100%;
+      --border: 0 0% 88%; /* neutral-300 - subtle borders */
+      --input: 0 0% 88%;
+      --ring: 210 100% 50% / 0.2; /* blue ring effect */
+      --radius: 0.75rem;
+      /* Harmonious chart colors */
+      --chart-1: 210 100% 50%; /* blue */
+      --chart-2: 270 100% 50%; /* purple - complementary */
+      --chart-3: 330 100% 50%; /* pink - complementary */
+      --chart-4: 180 100% 45%; /* teal - complementary */
+      --chart-5: 240 100% 50%; /* indigo - complementary */
+      /* Sidebar with neutral colors */
+      --sidebar-background: 0 0% 96%; /* neutral-100 */
+      --sidebar-foreground: 0 0% 10%;
+      --sidebar-primary: var(--primary);
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 0 0% 94%;
+      --sidebar-accent-foreground: 0 0% 10%;
+      --sidebar-border: 0 0% 88%;
+      --sidebar-ring: var(--ring);
+      /* Shadows */
+      --shadow-color: 0 0% 0% / 0.1; /* neutral black with opacity */
+      --shadow-highlight: 0 0% 100% / 0.8; /* white highlight with opacity */
+    }
+  
+    .dark {
+      --background: 0 0% 9%; /* neutral-900 */
+      --foreground: 0 0% 94%; /* neutral-100 */
+      --card: 0 0% 11%; /* neutral-800 */
+      --card-foreground: 0 0% 94%;
+      --popover: 0 0% 11%; /* neutral-800 */
+      --popover-foreground: 0 0% 94%;
+      --primary: 210 100% 60%; /* blue-400 - brighter for dark mode */
+      --primary-foreground: 0 0% 9%;
+      --secondary: 270 100% 60%; /* complementary to blue - brighter purple */
+      --secondary-foreground: 0 0% 9%;
+      --muted: 0 0% 16%; /* neutral-750 */
+      --muted-foreground: 0 0% 65%;
+      --accent: 225 100% 70%; /* brighter blue variant */
+      --accent-foreground: 0 0% 9%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 0 0% 94%;
+      --border: 0 0% 16%; /* neutral-750 */
+      --input: 0 0% 16%;
+      --ring: 210 100% 60% / 0.3; /* blue ring with opacity */
+      /* Adjusted chart colors for dark mode */
+      --chart-1: 210 100% 60%; /* brighter blue */
+      --chart-2: 270 100% 60%; /* brighter purple - complementary */
+      --chart-3: 330 100% 60%; /* brighter pink - complementary */
+      --chart-4: 180 100% 60%; /* brighter teal - complementary */
+      --chart-5: 240 100% 60%; /* brighter indigo - complementary */
+      /* Dark sidebar */
+      --sidebar-background: 0 0% 7%; /* neutral-950 */
+      --sidebar-foreground: 0 0% 94%;
+      --sidebar-primary: var(--primary);
+      --sidebar-primary-foreground: 0 0% 9%;
+      --sidebar-accent: 0 0% 13%;
+      --sidebar-accent-foreground: 0 0% 94%;
+      --sidebar-border: 0 0% 16%;
+      --sidebar-ring: var(--ring);
+      /* Shadows for dark mode */
+      --shadow-color: 0 0% 0% / 0.3; /* darker shadow for dark mode */
+      --shadow-highlight: 0 0% 100% / 0.1; /* subtle highlight for dark mode */
+    }
+  }

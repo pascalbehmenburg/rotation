@@ -77,16 +77,16 @@ fn main() {
 fn App() -> Element {
     let mut user_name = use_signal(|| "?".to_string());
     let mut permissions = use_signal(|| "?".to_string());
-
     rsx! {
         // The Stylesheet component inserts a style link into the head of the document
         document::Stylesheet {
             // Urls are relative to your Cargo.toml file
-            href: asset!("/assets/tailwind.css")
+            href: asset!("/assets/tailwind.css"),
         }
-
+        h1 { class: "text-3xl font-bold", "Axum Session Auth Example" }
         div {
-            button { onclick: move |_| {
+            button {
+                onclick: move |_| {
                     async move {
                         login().await.unwrap();
                     }
