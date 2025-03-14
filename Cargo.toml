@@ -1,0 +1,15 @@
+[package]
+name = "rotationsmaschine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+neqo-common = { version = "0.12", git = "https://github.com/mozilla/neqo.git" }
+neqo-crypto = { version = "0.12", git = "https://github.com/mozilla/neqo.git" }
+neqo-http3 = { version = "0.12", git = "https://github.com/mozilla/neqo.git" }
+neqo-transport = { version = "0.12", git = "https://github.com/mozilla/neqo.git" }
+neqo-qpack = { version = "0.12", git = "https://github.com/mozilla/neqo.git" }
+tokio = { version = "1", features = ["full"] }
+
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
